@@ -31,9 +31,8 @@ export default function Pokeman({ pokeman }) {
 
 // nextjs has severside rendering and static rendering
 // this is used for rendering severside page
-export const getServerSideProps = async ({ query }) => {
-  const id = query.id
-
+export const getServerSideProps = async ({ params }) => {
+  const id = params.id
   try {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const pokeman = await res.json()
