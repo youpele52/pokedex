@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // server side rendered page
 export default function Pokeman({ pokeman }) {
@@ -10,8 +11,10 @@ export default function Pokeman({ pokeman }) {
       <h1 className='text-4xl font-bold mb-2 text-center capitalize'>
         {pokeman.name}
       </h1>
-      <img
+      <Image
         className='mx-auto image-rotate '
+        width={500}
+        height={500}
         src={pokeman.image}
         alt={pokeman.name}
       />

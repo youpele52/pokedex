@@ -39,7 +39,9 @@ export default function Home({ pokemon }) {
                   className='border p-4 border-gray-200 my-2 capitalize flex items-center text-lg bg-gray-200 rounded-3xl '
                   href={pokeman.url}
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className='w-20 h-20 mr-3'
                     src={pokeman.image}
                     alt={pokeman.name}
