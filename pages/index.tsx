@@ -8,11 +8,32 @@ export default function Home({ pokemon }) {
   // console.log(pokemon)
   return (
     <Layout title='Pokedex'>
-      <h1 className='text-4xl text-center mb-8'>Pokedex</h1>
+      <div className=' mb-8'>
+        <h1 className='text-7xl  font-bold text-center'>
+          <Image
+            src='/Pokeball.svg'
+            alt=''
+            className='animate-bounce'
+            height={100}
+            width={100}
+          />
+          Pokedex
+          <Image
+            src='/Pokeball.svg'
+            alt=''
+            className='animate-bounce'
+            height={100}
+            width={100}
+          />
+        </h1>
+      </div>
       <ul>
         {pokemon.map((pokeman, index) => {
           return (
-            <li key={index}>
+            <li
+              key={index}
+              className='hover:font-bold hover:scale-125 hover:m-7 '
+            >
               <Link href={`/pokemon/${index + 1}`}>
                 <a
                   className='border p-4 border-gray-200 my-2 capitalize flex items-center text-lg bg-gray-200 rounded-3xl '
@@ -41,7 +62,7 @@ export async function getStaticProps(context) {
   try {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
     const { results } = await res.json()
-    console.log(results)
+    // console.log(results)
     const pokemon = results.map((pokeman, index) => {
       // originally the data from the api do not contain image
       // so here, image url for each of the pokeman's were dynamically created and added to our copy of the pokemon object
